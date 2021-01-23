@@ -38,13 +38,18 @@ ball.shapesize(stretch_wid=1, stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
 
+
 # Functions for movement of ball and Paddle A and Paddle B
 
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
 
 
-
-
-
+# Keyboard binding
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")
 
 # Main gaming loop
 while True:
